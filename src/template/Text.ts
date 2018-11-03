@@ -9,15 +9,12 @@ export default class Text extends MessageTemplateAbs {
         this.content = content;
     }
 
-    render() {}
-
     get() {
-        return {
-            msgtype: this.msgtype,
+        return this.render({
             text: {
                 content: this.content,
             },
             at: {},
-        };
+        });
     }
 }

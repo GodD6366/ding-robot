@@ -7,11 +7,20 @@ export default class MessageTemplateAbs {
         }
     }
 
-    protected render() {
-        throw new Error('抽象方法render不可以调用');
+    protected render(options: Object) {
+        return Object.assign(
+            {
+                msgtype: this.msgtype,
+            },
+            options
+        );
     }
 
     protected get() {
         throw new Error('抽象方法render不可以调用');
+    }
+
+    protected toJsonString() {
+        throw new Error('抽象方法toJsonString不可以调用');
     }
 }

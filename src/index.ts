@@ -1,6 +1,7 @@
 import Text from './template/text';
 import Markdown from './template/markdown';
 import MessageTemplateAbs from './template/MessageTemplateAbs';
+import { infoType } from './types';
 
 const request = require('request');
 
@@ -24,7 +25,7 @@ class DingRobot {
         console.log(text.get());
     }
 
-    md(info: { title: String; text: String }) {
+    md(info: infoType) {
         let md = new Markdown(info);
         console.log(md.get());
     }
