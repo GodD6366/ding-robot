@@ -3,13 +3,6 @@ import Markdown from '../src/template/markdown';
 
 // const ding: DingRobot = new DingRobot();
 
-// ding.text('test');
-
-// ding.md({
-//     title: 'jk',
-//     text: ['##fasdsd', '>dasdas', 'sdasd'].join('\n'),
-// });
-
 const md = new Markdown();
 md.setTitle('测试')
     .addHeaderText(1, '标题')

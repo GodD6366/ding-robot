@@ -1,9 +1,6 @@
-import Text from './template/text';
-import Markdown from './template/markdown';
-import MessageTemplateAbs from './template/MessageTemplateAbs';
-import { infoType } from './types';
-
 const request = require('request');
+import Text from './template/text';
+import MessageTemplateAbs from './template/MessageTemplateAbs';
 
 const TEST_HOOK =
     'https://oapi.dingtalk.com/robot/send?access_token=9dfd189bf5483df82abac5f9cd191a855731e4dae201b9ddffc7fbc2bb32506a'; // 测试机器人
@@ -19,16 +16,6 @@ class DingRobot {
      * 发送钉钉机器人通知
      */
     notify() {}
-
-    text(desc: String) {
-        let text = new Text(desc);
-        console.log(text.get());
-    }
-
-    md(info: infoType) {
-        let md = new Markdown(info);
-        console.log(md.get());
-    }
 }
 
 export default DingRobot;
