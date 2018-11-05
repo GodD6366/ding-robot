@@ -1,10 +1,11 @@
 import MessageTemplateAbs from './MessageTemplateAbs';
 
 export default class Markdown extends MessageTemplateAbs {
-    readonly msgtype = 'markdown';
-    title: String;
-    text: String;
-    private items: String[] = [];
+    protected readonly msgtype: String = 'markdown';
+    protected readonly canAt: boolean = true;
+    protected title: String;
+    protected text: String;
+    protected items: String[] = [];
 
     constructor() {
         super();
@@ -47,8 +48,8 @@ export default class Markdown extends MessageTemplateAbs {
      * 增加超链接
      * @param imageUrl 连接地址
      */
-    addImageText(imageUrl: String) {
-        this.items.push(`![image](${imageUrl})`);
+    addImageText(imageUrl: String, desc: String = 'image') {
+        this.items.push(`![${desc}](${imageUrl})`);
         return this;
     }
 
@@ -64,6 +65,14 @@ export default class Markdown extends MessageTemplateAbs {
     }
 
     /**
+     * 增加分隔符
+     */
+    addSeparator() {
+        this.items.push(`---`);
+        return this;
+    }
+
+    /**
      * 获取引用文本内容
      * @param text 内容
      */
@@ -72,6 +81,10 @@ export default class Markdown extends MessageTemplateAbs {
         return this;
     }
 
+    /**
+     * 增加有效列表
+     * @param list 列表
+     */
     addOrderListText(list: String[]) {
         list.map((str, idx) => {
             this.items.push(`${idx}. ${str}`);
@@ -79,6 +92,10 @@ export default class Markdown extends MessageTemplateAbs {
         return this;
     }
 
+    /**
+     * 增加无效列表
+     * @param list 列表
+     */
     addUnorderListText(list: String[]) {
         list.map((str, idx) => {
             this.items.push(`- ${str}`);
@@ -92,7 +109,6 @@ export default class Markdown extends MessageTemplateAbs {
                 title: this.title,
                 text: this.items.join('\n'),
             },
-            at: {},
         });
     }
 }
