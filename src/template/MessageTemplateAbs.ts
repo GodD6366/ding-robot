@@ -11,8 +11,6 @@ export default class MessageTemplateAbs {
     }
 
     protected render(options: Object) {
-        console.log(this.canAt);
-
         return Object.assign(
             {
                 msgtype: this.msgtype,
@@ -29,7 +27,7 @@ export default class MessageTemplateAbs {
         );
     }
 
-    protected get() {
+    get() {
         throw new Error('抽象方法render不可以调用');
     }
 

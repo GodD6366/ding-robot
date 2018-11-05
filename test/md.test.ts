@@ -1,4 +1,5 @@
 import Markdown from '../src/template/markdown';
+import DingRobot from '../src/DingRobot';
 
 const md = new Markdown();
 md.setTitle('小程序体验版发布通知')
@@ -12,4 +13,5 @@ md.setTitle('小程序体验版发布通知')
         'qrocde'
     );
 
-console.log(md.get());
+let ding = new DingRobot();
+ding.notify(md);
