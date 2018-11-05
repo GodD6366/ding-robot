@@ -5,7 +5,7 @@ const TEST_HOOK =
     'https://oapi.dingtalk.com/robot/send?access_token=9dfd189bf5483df82abac5f9cd191a855731e4dae201b9ddffc7fbc2bb32506a'; // 测试机器人
 
 class DingRobot {
-    robotHookUrl: String;
+    private robotHookUrl: String;
 
     constructor(hookUrl: String = TEST_HOOK) {
         this.robotHookUrl = hookUrl;

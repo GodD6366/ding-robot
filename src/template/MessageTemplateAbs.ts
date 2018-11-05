@@ -19,7 +19,7 @@ export default class MessageTemplateAbs {
             this.canAt
                 ? {
                       at: {
-                          atMobiles: [...this.atMobiles],
+                          atMobiles: Array.from(this.atMobiles),
                           isAtAll: this.isAtAll,
                       },
                   }
