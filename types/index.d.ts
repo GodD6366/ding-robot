@@ -1,3 +1,16 @@
+declare class MessageTemplateAbs {
+    constructor(); //构造函数
+    get(): Object;
+    atAll<T extends MessageTemplateAbs>(): T;
+    at<T extends MessageTemplateAbs>(phone: String): T;
+    at<T extends MessageTemplateAbs>(phones: String[]): T;
+}
+
+declare class DingRobot {
+    constructor(hookUrl: string); //构造函数
+    notify<T extends MessageTemplateAbs>(message: T): Promise<any>;
+}
+
 declare class Markdown extends MessageTemplateAbs {
     constructor();
     setTitle<T extends MessageTemplateAbs>(title: String): T;
@@ -11,4 +24,9 @@ declare class Markdown extends MessageTemplateAbs {
     addReferenceText<T extends MessageTemplateAbs>(text: String): T;
     addOrderListText<T extends MessageTemplateAbs>(list: String[]): T;
     addUnorderListText<T extends MessageTemplateAbs>(list: String[]): T;
+}
+
+declare class TextMessage extends MessageTemplateAbs {
+    constructor();
+    setContent<T extends MessageTemplateAbs>(title: String): T;
 }

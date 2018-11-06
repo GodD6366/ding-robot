@@ -11,6 +11,8 @@ md.setTitle('SDKtest')
         'qrocde'
     );
 
+console.log(md.get());
+
 let ding = new DingRobot();
 ding.notify(md)
     .then(() => {
