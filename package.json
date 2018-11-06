@@ -1,13 +1,13 @@
 {
   "name": "dingding-robot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "使用Nodejs更方便的调用钉钉机器人",
   "main": "lib/index.js",
   "scripts": {
     "build": "rollup -c build/rollup.config.js",
     "build:cmjs": "tsc -d -P tsconfig.json"
   },
-  "typings":"types/index.d.ts",
+  "typings": "types/index.d.ts",
   "author": "GodD6366",
   "license": "ISC",
   "devDependencies": {
