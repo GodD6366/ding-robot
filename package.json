@@ -1,6 +1,6 @@
 {
   "name": "dingding-robot",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "使用Nodejs更方便的调用钉钉机器人",
   "main": "lib/index.js",
   "scripts": {
