@@ -1,6 +1,7 @@
 declare class Markdown extends MessageTemplateAbs {
     constructor();
     setTitle<T extends MessageTemplateAbs>(title: String): T;
+    add<T extends MessageTemplateAbs>(text: String | Array<String>): T;
     addBoldText<T extends MessageTemplateAbs>(text: String): T;
     addItalicText<T extends MessageTemplateAbs>(text: String): T;
     addLinkText<T extends MessageTemplateAbs>(text: String, href: String): T;

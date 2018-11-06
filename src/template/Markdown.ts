@@ -17,6 +17,18 @@ export default class Markdown extends MessageTemplateAbs {
     }
 
     /**
+     * 新增自定义文本
+     * @param text 普通文本
+     */
+    add(text: String | Array<String>) {
+        if (Array.isArray(text)) {
+            this.items.concat(text);
+        } else {
+            this.items.push(text);
+        }
+    }
+
+    /**
      * 增加粗体字
      * @param text 文本内容
      */
