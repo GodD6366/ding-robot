@@ -1,6 +1,6 @@
 import Markdown from '../src/template/markdown';
 import DingRobot from '../src/DingRobot';
-
+import { TOKEN } from './config';
 const md = new Markdown();
 md.setTitle('小程序体验版发布通知')
     .addHeaderText(3, '小程序体验版已发布,请安排测试')
@@ -13,5 +13,5 @@ md.setTitle('小程序体验版发布通知')
         'qrocde'
     );
 
-let ding = new DingRobot();
+let ding = new DingRobot(TOKEN);
 ding.notify(md);

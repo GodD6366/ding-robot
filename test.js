@@ -10,6 +10,7 @@ md.setTitle('SDKtest')
         'https://developers.weixin.qq.com/miniprogram/dev/image/devtools2/mydev/mydev-qrcode.jpg',
         'qrocde'
     );
+
 let ding = new DingRobot();
 ding.notify(md)
     .then(() => {

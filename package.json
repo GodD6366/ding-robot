@@ -1,10 +1,9 @@
 {
-  "name": "ding-robot",
+  "name": "dingding-robot",
   "version": "0.0.1",
-  "description": "更方便的调用钉钉机器人",
+  "description": "使用Nodejs更方便的调用钉钉机器人",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c build/rollup.config.js"
   },
   "author": "",
