@@ -4,8 +4,10 @@
   "description": "使用Nodejs更方便的调用钉钉机器人",
   "main": "lib/index.js",
   "scripts": {
-    "build": "rollup -c build/rollup.config.js",
-    "build:cmjs": "tsc -d -P tsconfig.json"
+    "build:rollup": "rollup -c build/rollup.config.js",
+    "build:cmjs": "tsc -d -P tsconfig.json",
+    "build:es6": "tsc -P tsconfig.json --module ES6 --outDir lib/es6",
+    "build": "npm run build:cmjs"
   },
   "typings": "types/index.d.ts",
   "author": "GodD6366",
