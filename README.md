@@ -2,14 +2,21 @@
 
 > 目前只支持`markdown`,`link`,`text`这三种类型的消息
 
-使用方法如下:
+## 安装
+
+```sh
+npm install dingding-robot
+```
+
+## 使用方法
+
+#### 发送 Markdown 类型
 
 ```js
 const { DingRobot, Markdown, Text, Link } = require('dingding-robot');
 
 let ding = new DingRobot('钉钉机器人token');
 
-// Markdown类型
 let md = new Markdown();
 md.setTitle('杭州天气')
     .addHeaderText(4, `杭州天气 `)
@@ -30,15 +37,21 @@ ding.notify(md)
         console.log(`errcode: ${errcode}`);
         console.log(`errmsg: ${errmsg}`);
     });
+```
 
-// text类型
+#### 发送 Text 类型
+
+```js
 const text = new Text();
 text.setContent('我就是我,  @1825718XXXX 是不一样的烟火');
 text.at('1825718XXXX');
 
 ding.notify(text);
+```
 
-// link类型
+#### 发送 Link 类型
+
+```js
 const link = new Link();
 link.setText(
     '群机器人是钉钉群的高级扩展功能。群机器人可以将第三方服务的信息聚合到群聊中，实现自动化的信息同步。例如：通过聚合GitHub，GitLab等源码管理服务，实现源码更新同步；通过聚合Trello，JIRA等项目协调服务，实现项目信息同步。不仅如此，群机器人支持Webhook协议的自定义接入，支持更多可能性，例如：你可将运维报警提醒通过自定义机器人聚合到钉钉群。'
